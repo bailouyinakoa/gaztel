@@ -99,7 +99,6 @@
                {% elif animal.is_video %}
                   <div class="card-body">
                     <p>{{animal.description}}</p>
-                    <video class="card-body" src="{{ animal.file.url }}" controls></video>
                     <video class="card-img-top" src="{{ animal.file.url }}" controls></video>
                   </div>
               {% endif %}
