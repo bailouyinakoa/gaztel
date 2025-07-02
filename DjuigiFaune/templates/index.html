@@ -96,7 +96,7 @@
                     {% if animal.is_image %}
                        <img class="card-img-top" src="{{ animal.file.url }}" alt="" id="image">
                     {% elif animal.is_video %}
-                      <video class="card-img-top" src="{{animal.file.url }}" controls></video>
+                      <video class="card-img-top" src="{{ animal.file.url }}" controls></video>
                     {% endif %}
                 </div>
                 <div class="card-footer bg-white">
