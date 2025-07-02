@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DjuigiFaune</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+
+</head>
+<body style="height: 100%; width: 100%; overflow-x: hidden;">
+  {% include 'nav.html'%}
+    {% block content %}
+    
+
+    {% endblock%}
+  {% include '_footer.html' %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  <script src="{% static 'js/offcanvas.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/holder.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="{% static 'js/publication.js' %}" defer></script>
+  <script src="{% static 'js/recherche.js' %}" defer></script>
+  <script src="{% static 'js/index.js' %}" defer></script>
+  <script src="{% static 'js/reaction_publications.js' %}" defer></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

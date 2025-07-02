@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>DjuigiFaune</title>
+    <!-- MDB icon -->
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+  </head>
+  <body style="width: 100%; margin-top: 150px; overflow-x: hidden;">
+    <!-- Start your project here-->
+    {% extends "base.html" %}
+    {% block content %}
+    {% load static %}
+    <style>
+        @keyframes animate{
+    to{
+        background-position: 0% 50%;
+    }
+    
+    50%{
+        background-position-x: -240px;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
+        #djiguifaune{
+        background: linear-gradient(to right,#1e0ffc,#f81326);
+        transform-origin: 0% 70%;
+        display:flex;
+        transform-style: preserve-3d;
+        color: blue;
+        animation: animate 10s infinite linear;
+        font-size: 1.5rem;
+        background-size: cover;
+        background-clip: text;
+        color: transparent;
+      }
+      #prix{
+        background: linear-gradient(to right,#1e00ff,#f81326);
+        display: inline-block;
+        transform-origin: 0% 70%;
+        transform-style: preserve-3d;
+        color: blue;
+        font-size: 1rem;
+        margin-bottom: 30px;
+        background-size: cover;
+        background-clip: text;
+        color: transparent;
+      }
+
+      #contact{
+        background: linear-gradient(to right,#1404fa,#000000);
+        display: inline-block;
+        transform-origin: 0% 70%;
+        transform-style: preserve-3d;
+        color: blue;
+        font-size: 1rem;
+        margin-bottom: 30px;
+        background-size: cover;
+        background-clip: text;
+        color: transparent;
+      }
+      #card_animaux{
+        border-radius: 20px;
+      }
+    </style>
+        <div class="card shadow-0 border border-5 border-success justify-content-center text-center">
+            <h3 class="text-sm-start ms-2">Bienvenu à vous sur notre site, si vous ètes passionné de l'élevage ou si vous avez besoins d'animaux sauvage ,vus ètes la bienvenu sur DjuigiFaune</h3>
+        </div>
+        <div class="row">
+        {% for animal in animaux%}
+            <div class="card col-12 col-md-6 col-lg-3 col-xl-3 d-flex mb-1 mt-2  border border-2 border-info rounded-5 shadow-0" id="card_animaux">
+                <div class="card-header bg-white">
+                    <h4 class="bg-white">DjuigiFaune</h4>
+                    <p>il y'a {{ animal.created_at|timesince }}</p>
+                </div>
+                <div class="card-body">
+                    <p>{{animal.description}}</p>
+                    <img class="card-img-top" src="{{ animal.file.url }}" alt="" id="image">
+                </div>
+                <div class="card-footer bg-white">
+                    <div class="row">
+                        <div class="col">
+                            <h4 id="prix">Prix=> {{animal.prix}}</h4>
+                        </div>
+                        <div class="col">
+                            <h4 id="contact">Contact=> {{animal.numero}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+     </div>
+     </div>
+
+     <a href="https://wa.me/qr/KTCIOXX2HAJJJ1">
+            <div class="card rounded-circle bg-success fixed-bottom  mb-1 end-0 text-center" style="width: 65px; height: 65px; ">
+                <img class="card-img-top rounded-circle" src="static/img/what.png" alt="">
+            </div>
+     </a>
+
+    <script type="text/javascript"></script>
+    {% endblock %}
+  </body>
+</html>
