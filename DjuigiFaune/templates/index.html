@@ -91,14 +91,17 @@
                     <h4 class="bg-white">DjuigiFaune</h4>
                     <p>il y'a {{ animal.created_at|timesince }}</p>
                 </div>
-                <div class="card-body">
+               {% if animal.is_image %}
+                  <div class="card-body">
                     <p>{{animal.description}}</p>
-                    {% if animal.is_image %}
-                       <img class="card-img-top" src="{{ animal.file.url }}" alt="" id="image">
-                    {% elif animal.is_video %}
-                      <video class="card-img-top" src="{{animal.file.url }}"></video>
-                    {% endif %}
-                </div>
+                    <img class="card-img-top" src="{{ animal.file.url }}" alt="" id="image">
+                  </div>
+               {% elif animal.is_video %}
+                  <div class="card-body">
+                    <p>{{animal.description}}</p>
+                    <video class="card-body" src="{{ animal.file.url }}" controls></video>
+                  </div>
+              {% endif %}
                 <div class="card-footer bg-white">
                     <div class="row">
                         <div class="col">

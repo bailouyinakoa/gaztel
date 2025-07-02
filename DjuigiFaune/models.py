@@ -9,10 +9,11 @@ class Animaux(models.Model):
     numero=models.IntegerField()
     created_at=models.DateTimeField(auto_now_add=True)
 
+    @property
     def filename(self):
-        if self.image:
+        if self.file:
             try:
-                return os.path.basename(self.image.name)
+                return os.path.basename(self.file.name)
             except:
                 pass
         else:
