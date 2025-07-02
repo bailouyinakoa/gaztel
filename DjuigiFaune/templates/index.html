@@ -99,7 +99,11 @@
                {% elif animal.is_video %}
                   <div class="card-body">
                     <p>{{animal.description}}</p>
+<<<<<<< HEAD
                     <video class="card-body" src="{{ animal.file.url }}" controls></video>
+=======
+                    <video class="card-img-top" src="{{ animal.file.url }}" controls></video>
+>>>>>>> 86694336af50e41ed332ec5d159a079da39f3bb6
                   </div>
               {% endif %}
                 <div class="card-footer bg-white">
